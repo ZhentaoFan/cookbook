@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import CodeComponent from "./ui/CodeComponent";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -42,7 +43,7 @@ export function Playground() {
       <div key={message.id} className="flex items-start space-x-2">
         <div className="w-20 text-sm text-green-500">{message.author}</div>
         <div className="flex-1 border rounded-lg p-2">
-          <p className="text-black dark:text-white">{message.content}</p>
+          <CodeComponent code={message.content?.replace(/[\s\S]*```python/, '').replace(/```[\s\S]*/, '')} />
           <small className="text-xs text-gray-500">{date}</small>
         </div>
       </div>

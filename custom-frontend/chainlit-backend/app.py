@@ -3,7 +3,7 @@ from openai import AsyncOpenAI
 
 import chainlit as cl
 
-
+print('good', os.environ["OPENAI_API_KEY"])
 client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 settings = {
